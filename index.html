@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-image: linear-gradient(to bottom, blue, purple);
+        font-family: cursive;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+      }
+
+      nav {
+        background-color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: black;
+        margin: 0 10px;
+        font-size: 20px;
+      }
+
+      section {
+        background-color: rgba(255, 255, 255, 0.8);
+        display: none;
+        width: 50%;
+        padding: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      #red-jewels {
+        background-color: rgb(255, 60, 60);
+      }
+
+      #goku {
+        background-color: rgb(255, 165, 0);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      footer {
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#red-jewels">Red Jewels</a>
+      <a href="#goku">Goku</a>
+    </nav>
+    <section id="red-jewels">
+      <h2>Red Jewels</h2>
+      <p>
+        Red jewels are a rare and valuable type of gemstone. They are prized for their
+        stunning color and are often used in jewelry and other decorative items. Some of the
+        most popular types of red jewels include ruby, garnet, and spinel.
+      </p>
+    </section>
+    <section id="goku">
+      <h2>Goku</h2>
+      <p>
+        Goku is a popular character from the Japanese manga and anime series Dragon Ball. He
+        is known for his incredible strength and fighting abilities, as well as his kind and
+        selfless nature. Goku is a skilled warrior and has fought many battles to protect the
+        earth and those he loves.
+      </p>
+    </section>
+    <footer>
+      <p>Created by KORAI#7460</p>
+    </footer>
+    <script>
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section");
+  
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetSection = document.querySelector(e.target.getAttribute("href"));
+          sections.forEach((section) => {
+            section.style.display = "none";
+          });
+          targetSection.style.display = "block";
+        });
+      });
+    </script>
+      </body>
+    </html>
